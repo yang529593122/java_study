@@ -6,24 +6,29 @@ public class Pig {
     private int weight = 20; // 重量
 
     // 构造
-    public Pig(){}
-    public Pig(String name){
+    public Pig() {
+    }
+
+    public Pig(String name) {
         this.name = name;
     }
 
     // 方法
     public void killed() {
-            System.out.println(this.name+"被杀啦！");
+        System.out.println(this.name + "被杀啦！");
     }
-    public void growUp(int month){
+
+    public void growUp(int month) {
         for (int i = 1; i < month; i++) {
-            this.weight*=2;
+            this.weight *= 2;
         }
     }
-    public int getWeightNum(){
+
+    public int getWeightNum() {
         return this.weight;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
 }
