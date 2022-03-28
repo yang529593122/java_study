@@ -26,7 +26,7 @@ public class Test {
                     delStudent(array);
                     break;
                 case "3":
-                    System.out.println("修改学生");
+                    editorStudent(array);
                     break;
                 case "4":
                     findStudent(array);
@@ -58,6 +58,30 @@ public class Test {
         s.setAddress(address);
         array.add(s);
         System.out.println("添加学生成功");
+    }
+    // 编辑学生
+    public static void editorStudent(ArrayList<Student> array){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入学生编号");
+        String sid = scanner.nextLine();
+        System.out.println("请输入学生姓名:");
+        String name = scanner.nextLine();
+        System.out.println("请输入学生年龄:");
+        String age = scanner.nextLine();
+        System.out.println("请输入学生居住地址:");
+        String address = scanner.nextLine();
+        for (int i = 0; i < array.size(); i++) {
+            Student s = array.get(i);
+            if(s.getSid().equals(sid)){
+                s.setName(name);
+                s.setAge(Integer.parseInt(age));
+                s.setAddress(address);
+                array.set(i,s);
+                System.out.println("修改学生成功");
+                break;
+
+            }
+        }
     }
     // 查看学生
     public static void findStudent(ArrayList<Student> array) {
